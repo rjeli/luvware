@@ -1,7 +1,6 @@
 local function serveWith(ware)
 	local function handler(req, res)
 		req.response = res
-		print("go request")
 		for k, v in pairs(ware) do
 			v(req)
 		end
@@ -24,7 +23,6 @@ local function wrapParams(req)
 	req.params = {}
 
 	for k, v in req.url:gmatch('[^?]+') do
-		print(k, v)
 		table.insert(spliturl, k)
 	end
 
@@ -32,7 +30,6 @@ local function wrapParams(req)
 	local qs = spliturl[2]
 
 	if qs then
-		print('query string is ' .. qs)
 		for k, v in qs:gmatch('[^&]+') do
 			table.insert(splitqs, k)
 		end
@@ -43,8 +40,6 @@ local function wrapParams(req)
 			end
 			req.params[splitassign[1]] = splitassign[2]
 		end
-	else
-		print('no query string')
 	end
 end
 

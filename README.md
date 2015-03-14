@@ -1,13 +1,11 @@
 # luvware
-Performant, minimal middleware for Luvit.
-
-To be used with [luvit](https://github.com/luvit/luvit)
+Performant, minimal middleware for [Luvit](https://github.com/luvit/luvit).
 
 ````
 http = require('http')
 lw = require('luvware')
 
-function handler(req)
+function helloHandler(req)
 	local name = req.params.name or 'nobody'
 	req.response:finish('hello, ' .. name)
 end
@@ -15,7 +13,7 @@ end
 middleware = {
 	lw.wrapContentType,
 	lw.wrapParams,
-	handler
+	helloHandler
 }
 
 http.createServer(lw.serveWith(middleware)):listen(8080)
