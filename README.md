@@ -23,7 +23,7 @@ print('Server listening on port 8080!')
 
 ## Using luvware
 
-luvware.serveWith takes a list of middleware functions and returns an HTTP handler that accepts requests and calls the middleware in succession. Each middleware function can mutate the request table. The last function should handle the request and finish the response.
+luvware.serveWith takes a list of middleware functions and returns an HTTP handler function that accepts requests and calls the middleware in succession. Each middleware function can mutate the request table. The last function should handle the request and finish the response.
 
 ## Adding middleware
 
@@ -57,7 +57,7 @@ Some often-used middleware is included in this library for convenience.
 
 ### wrapParams
 
-This will mutate (!) the req.url, removing URL-encoded parameters. A table named params is added to the request table, containing parameters and their values as strings. An example of this is at the top of the page.
+This will mutate (!) the req.url, removing URL-encoded parameters. A table named params, containing parameters and their values as strings, is added to the request table. An example of this is at the top of the page.
 
 ### wrapContentType
 
