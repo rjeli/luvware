@@ -45,7 +45,7 @@ Relevant keys in the response table:
 
 **finish(content)**: this sends content and closes the response. Nothing may be sent after this is called
 
-````
+````lua
 function wrapURLPrinter(req)
 	print('The URL requested is ' .. req.url)
 end
