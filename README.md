@@ -2,7 +2,7 @@
 
 Performant, minimal middleware for [Luvit](https://github.com/luvit/luvit).
 
-````
+````lua
 http = require('http')
 lw = require('luvware')
 
