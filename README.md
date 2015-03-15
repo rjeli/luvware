@@ -2,7 +2,7 @@
 
 Performant, minimal middleware for [Luvit](https://github.com/luvit/luvit).
 
-````
+````lua
 http = require('http')
 lw = require('luvware')
 
@@ -57,7 +57,7 @@ Some often-used middleware is included in this library for convenience.
 
 ### wrapParams
 
-This will mutate (!) the req.url, removing URL-encoded parameters. A table named params, containing parameters and their values as strings, is added to the request table. An example of this is at the top of the page.
+This will mutate (!) the req.url, removing URL-encoded parameters. A table named params containing parameters and their values as strings is added to the request table. An example of this is at the top of the page.
 
 ### wrapContentType
 
