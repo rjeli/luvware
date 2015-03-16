@@ -12,8 +12,8 @@ function helloHandler(req)
 end
 
 middleware = {
-	lw.wrapContentType,
-	lw.wrapParams,
+	lw.wrapContentType{},
+	lw.wrapParams{},
 	helloHandler
 }
 
