@@ -62,3 +62,9 @@ This will mutate (!) the req.url, removing URL-encoded parameters. A table named
 ### wrapContentType
 
 This is a work in progress, and currently just sets the Content-Type header to text/html. Soon, it will detect content type and set the header appropriately.
+
+### wrapSession
+
+This will add a table to the request map. It can be mutated, and will be preserved across a user's session. An ID is stored in the user's cookies, but all data is stored server-side.
+
+The function to create wrapSession can be passed a 'store' key, which can either be 'memory' or 'sqlite'. Memory store is the default. This will keep the sessions in a table in memory. The 'sqlite' store will save the sessions to a database. To use the sqlite store, you will need to install the LJSqlite3 library found [here](http://scilua.org/get.html).
